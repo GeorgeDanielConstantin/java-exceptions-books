@@ -1,0 +1,1 @@
+[Libro{Titolo='pippo', Numero Pagine=10000', Autore='io', Editore='tu}]
