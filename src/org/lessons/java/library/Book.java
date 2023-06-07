@@ -7,7 +7,7 @@ public class Book {
     private String publisher;
     public Book(String title, int numberOfPages, String author, String publisher) throws InvalidBook {
 
-        if (title != null && author != null && publisher != null && numberOfPages > 0) {
+        if (title != null && !title.isBlank() && author != null && !author.isBlank() && publisher != null && !publisher.isBlank() && numberOfPages > 0) {
             this.title = title;
             this.numberOfPages = numberOfPages;
             this.author = author;
@@ -35,7 +35,9 @@ public class Book {
 
 
     public void setTitle(String title) {
-        this.title = title;
+        if (title != null && !title.isBlank()) {
+            this.title = title;
+        }
     }
 
     public void setNumberOfPages(int numberOfPages) {
@@ -46,11 +48,15 @@ public class Book {
     }
 
     public void setAuthor(String author) {
-        this.author = author;
+        if (author != null && !author.isBlank()) {
+            this.author = author;
+        }
     }
 
     public void setPublisher(String publisher) {
-        this.publisher = publisher;
+        if (publisher != null && !publisher.isBlank()) {
+            this.publisher = publisher;
+        }
     }
 
     @Override
